@@ -1,0 +1,26 @@
+[{
+	"firstName": "Егор",
+	"lastName": "Крид",
+	"address": "г. Пермь",
+	"phoneNumber": "515-808-1710"
+	}, {
+	"firstName": "Фаина",
+	"lastName": "Раневская",
+	"address": "г. Краснодар",
+	"phoneNumber": "200-121-9112"
+	}, {
+	"firstName": "Иван",
+	"lastName": "Ургант",
+	"address": "г. Санкт-Петербург",
+	"phoneNumber": "141-253-1010"
+	}, {
+	"firstName": "Александр",
+	"lastName": "Розенбаум",
+	"address": "г. Курск",
+	"phoneNumber": "717-203-4040"
+	}, {
+	"firstName": "Максим",
+	"lastName": "Галкин",
+	"address": "г. Сочи",
+	"phoneNumber": "304-101-3435"
+  }]
