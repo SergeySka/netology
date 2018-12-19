@@ -8,35 +8,22 @@ $countries = [
 	'Arctic' => ['Vulpes lagopus', 'Ovibos moschatus', 'Orcinus orca', 'Odobenus rosmarus', 'Ursus maritimus']
 ];
 $array_two_words = [];
+$first = [];
+$second = [];
+$test = [];
+$aaa = [];
 foreach ($countries as $key => $value) {
 	foreach ($value as $a => $b) {
 		$c = trim($b);
 		if (count(explode(' ', $c)) ==2) {
 			array_push($array_two_words, $c);
+			$explode = explode(' ', $c);
+			array_push($first, $explode[0]);
+			array_push($second, $explode[1]);
 		}
 	}
 };
-
 $two_words = implode( ", ", $array_two_words);
-///
-$one = [];
-$first = [];
-$second = [];
-foreach ($array_two_words as $key => $value) {
-	$word = explode(" ", $value);
-	array_push($one, $word);
-};
-
-foreach ($one as $key => $value) {
-	$firstWord = $value[0];
-	array_push($first, $firstWord);
-};	
-
-foreach ($one as $key => $value) {
-	$firstWord = $value[1];
-	array_push($second, $firstWord);
-};
-
 shuffle($second);	
 $i=0;
 $count = count($first);
@@ -60,11 +47,11 @@ $count = count($first);
  	<h3>3. "Фантазийные" названия:</h3>
  	<?php 
  		while ($i<$count) {
-	echo $first[$i].' '.$second[$i].'<br>';
-	$i++;
+			echo $first[$i].' '.$second[$i].'<br>';
+			$i++;
 }
 
- 	 ?>
+?>
  	 <h3>Дополнительное задание</h3>
  <?php
  	$i=0;
