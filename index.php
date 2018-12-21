@@ -2,7 +2,6 @@
 ini_set('error_reporting', E_ALL);
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
-// $data = file_get_contents(__DIR__ . DIRECTORY_SEPARATOR .'data.json');
 $data = file_get_contents("http://university.netology.ru/u/soleinikov/me/data.json");
 $json =json_decode($data, true);
 ?>
@@ -23,14 +22,14 @@ $json =json_decode($data, true);
  		<th>Город</th>
  		<th>Телефон</th>
  	</thead>	
-	<? foreach ($json as $value): ?>
+	<?php foreach ($json as $value): ?>
 	<tr>
 		<td><?=$value['firstName']?></td>
 		<td><?=$value['lastName']?></td>
 		<td><?=$value['address']?></td>
 		<td><?=$value['phoneNumber']?></td>
 	</tr>
-	<? endforeach; ?>	
+	<?php endforeach; ?>	
  	</table>
  </body>
  </html>
