@@ -8,7 +8,7 @@ if (!isset($argv[1])) {
 	exit;
 };
 $url = "https://www.googleapis.com/books/v1/volumes?q=";
-$query = urlencode(implode(' ', array_slice($argv, 1, count($argv)-1)));
+$query = urlencode(iconv("windows-1251", "utf-8//IGNORE",implode(' ', array_slice($argv, 1, count($argv)-1)))); //без iconv cmd у меня не распознает русский
 $full_url = $url.$query;
 var_dump($full_url);
 $filecontent = file_get_contents($full_url);
