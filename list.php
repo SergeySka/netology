@@ -1,15 +1,9 @@
 <?php 
-if (empty($_FILES)) {
-	echo 'Ошибка файла / файл не загружен';
-}
-else {
-	move_uploaded_file($_FILES["upload"]["tmp_name"], $_FILES["upload"]["name"]);
-};
+ini_set('error_reporting', E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+
 $type = glob('*.json');
-if (empty($type)) {
-	echo 'Нет доступных тестов';
-	exit;
-}
  ?>
  <!doctype html>
  <html lang="en">
@@ -22,10 +16,15 @@ if (empty($type)) {
  </head>
  <body>
  	<p>Выберите доступный тест:</p>
+ 	<?php  if (empty($type)) {
+	echo 'Нет доступных тестов';	
+}
+?>
  	<ul>
  	<?php $i=1; foreach ($type as $value) : ?>
  	<li><?='<a href="test.php?test='.$value.'">Тест №'.$i.'</a>'?></li>
  	<?php $i++; endforeach; ?>
 	</ul>
+	<p><a href="admin.php">На страницу загрузки теста</a></p>
  </body>
  </html>
